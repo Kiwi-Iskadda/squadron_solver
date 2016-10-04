@@ -215,13 +215,12 @@
 
         for (regindex in regimens) {
           for (index in subsets) {
-            //minor change
             var curr = regimens[regindex];
             var turn = curr[0];
             var regi = curr[1];
             var subset = subsets[index];
             var without_regi = sum(subset);
-            var with_regi = sum(new Array([without_regi,regi]));
+            var with_regi = sum(new Array(without_regi,regi));
             var diffstr = Math.max(0,goal[0]-with_regi[0]);
             var diffmnd = Math.max(0,goal[1]-with_regi[1]);
             var difftac = Math.max(0,goal[2]-with_regi[2]);
