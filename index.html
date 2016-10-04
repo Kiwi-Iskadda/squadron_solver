@@ -130,7 +130,7 @@
       var goal;
       var regimen;
 
-      var combine = function(a, min,max) {
+      var combine = function(a, size) {
         var fn = function(n, src, got, all) {
           if (n == 0) {
               if (got.length > 0) {
@@ -144,10 +144,7 @@
           return;
         }
         var all = [];
-        for (var i = min; i < max+1; i++) {
-          fn(i, a, [], all);
-        }
-        all.push(a);
+        fn(size, a, [], all);
         return all;
       }
 
