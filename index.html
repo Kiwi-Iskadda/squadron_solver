@@ -213,6 +213,7 @@
 
         for ([turn,regimen] in regimens) {
           for (index in subsets) {
+            //minor change
             var subset = subsets[index];
             var without_regi = sum(subset);
             var with_regi = sum([without_regi,regimen]);
