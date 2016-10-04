@@ -217,9 +217,9 @@
             var subset = subsets[index];
             var without_regi = sum(subset);
             var with_regi = sum(new Array([without_regi,regimen]));
-            var diffstr = max(0,goal[0]-with_regi[0]);
-            var diffmnd = max(0,goal[1]-with_regi[1]);
-            var difftac = max(0,goal[2]-with_regi[2]);
+            var diffstr = Math.max(0,goal[0]-with_regi[0]);
+            var diffmnd = Math.max(0,goal[1]-with_regi[1]);
+            var difftac = Math.max(0,goal[2]-with_regi[2]);
             sumdiff = 1*diffstr + diffmnd + difftac;
             console.log(sumdiff);
           }
