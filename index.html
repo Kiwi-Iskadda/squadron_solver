@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Hone your skills! Beat Voldemort!">
+    <meta name="description" content="Beat them training missions">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game of Thrones - Littlefinger</title>
+    <title>Squadron Solver</title>
     <style>
       .blue { background-color: #3c78d8; }
       .red { background-color: #e06666; }
@@ -144,7 +144,7 @@
           return;
         }
         var all = [];
-        for (var i = min; i < max; i++) {
+        for (var i = min; i < max+1; i++) {
           fn(i, a, [], all);
         }
         all.push(a);
@@ -180,6 +180,7 @@
         strs = [str1,str2,str3,str4,str5,str6,str7,str8];
         subsets = combine(strs,4,4);
         $('#div-wrapper').append(strs.length);
+        $('#div-wrapper').append(strs);
 
       }
       $(document).ready(function() {
