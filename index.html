@@ -149,8 +149,10 @@
       }
 
       function get_regimens(queue,regidict) {
-        while (queue.length > 0) {
+        var iters = 0;
+        while (queue.length > 0 || iters < 4) {
           console.log(queue.length);
+          console.log(queue);
           var [turn,regimen] = queue.shift();
           if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
            continue;
@@ -166,6 +168,7 @@
           queue.push([turn,[regimen[0]-40,regimen[1]+20,regimen[2]+20]]);
           queue.push([turn,[regimen[0]+20,regimen[1]-40,regimen[2]+20]]);
           queue.push([turn,[regimen[0]+20,regimen[1]+20,regimen[2]-40]]);
+          iters += 1;
         }
         return Object.keys(regidict).map(function(key){return regidict[key];});
       }
