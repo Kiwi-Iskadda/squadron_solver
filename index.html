@@ -211,7 +211,7 @@
         regimen = [$('form input[name="regstr"]').val(),$('form input[name="regmnd"]').val(),$('form input[name="regtac"]').val()];
         subsets = combine(tuples,4);
 
-        var regimens = get_regimens(new Array([[0,regimen]]),{});
+        var regimens = get_regimens(new Array([0,regimen]),{});
 
         for (regindex in regimens) {
           for (index in subsets) {
