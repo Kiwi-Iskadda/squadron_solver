@@ -170,7 +170,7 @@
       }
 
       function sum(arr) {
-        arr.reduce(function (r, a) {
+        return arr.reduce(function (r, a) {
           a.forEach(function (b, i) {
             r[i] = (r[i] || 0) + 1*b;
           });
