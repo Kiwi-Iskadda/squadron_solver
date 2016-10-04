@@ -103,13 +103,31 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-      var rows;
-      var cols;
-      var divs;
-      var reds = 0;
-      var blues = 0;
-      var greens = 0;
-      var total;
+      var str1;
+      var str2;
+      var str3;
+      var str4;
+      var str5;
+      var str6;
+      var str7;
+      var str8;
+      var mnd1;
+      var mnd2;
+      var mnd3;
+      var mnd4;
+      var mnd5;
+      var mnd6;
+      var mnd7;
+      var mnd8;
+      var tac1;
+      var tac2;
+      var tac3;
+      var tac4;
+      var tac5;
+      var tac6;
+      var tac7;
+      var tac8;
+
       function move(e) {
         var r = $(e.currentTarget).data('row');
         var c = $(e.currentTarget).data('col');
@@ -158,11 +176,34 @@
       function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
       }
-      function play(e) {
+      function solve(e) {
         e.preventDefault();
-        rows = $('form input[name="rows"]').val();
-        cols = $('form input[name="cols"]').val();
-        $('form').detach();
+        str1 = $('form input[name="str1"]').val();
+        str2 = $('form input[name="str2"]').val();
+        str3 = $('form input[name="str3"]').val();
+        str4 = $('form input[name="str4"]').val();
+        str5 = $('form input[name="str5"]').val();
+        str6 = $('form input[name="str6"]').val();
+        str7 = $('form input[name="str7"]').val();
+        str8 = $('form input[name="str8"]').val();
+        mnd1 = $('form input[name="mnd1"]').val();
+        mnd2 = $('form input[name="mnd2"]').val();
+        mnd3 = $('form input[name="mnd3"]').val();
+        mnd4 = $('form input[name="mnd4"]').val();
+        mnd5 = $('form input[name="mnd5"]').val();
+        mnd6 = $('form input[name="mnd6"]').val();
+        mnd7 = $('form input[name="mnd7"]').val();
+        mnd8 = $('form input[name="mnd8"]').val();
+        tac1 = $('form input[name="tac1"]').val();
+        tac2 = $('form input[name="tac2"]').val();
+        tac3 = $('form input[name="tac3"]').val();
+        tac4 = $('form input[name="tac4"]').val();
+        tac5 = $('form input[name="tac5"]').val();
+        tac6 = $('form input[name="tac6"]').val();
+        tac7 = $('form input[name="tac7"]').val();
+        tac8 = $('form input[name="tac8"]').val();
+        $('#div-wrapper').append(str1)
+        /*$('form').detach();
         for(var c = 0; c <= cols; c++) {
           $('#div-wrapper').append('<div class="control" id="c0-' + c + '"></div>');
           if(c != 0) {
@@ -186,10 +227,10 @@
         for(var c = 0; c <= cols; c++) {
           $('#div-wrapper').append('<div class="info" id="i0-' + c + '"></div>');
           if(c === 0) { $('.info#i0-0').css('visibility', 'hidden'); }
-        }
+        }*/
       }
       $(document).ready(function() {
-        $('button').click(play);
+        $('button').click(solve);
       });
     </script>
   </body>
