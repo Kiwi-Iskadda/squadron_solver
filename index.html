@@ -213,6 +213,15 @@
 
         var regimens = get_regimens(new Array([0,regimen]),{});
 
+        var min_diff = 9999999999;
+        var min_turn;
+        var min_set;
+        var min_regi;
+        var min_stats;
+        var min_str;
+        var min_mnd;
+        var min_tac;
+
         for (regindex in regimens) {
           for (index in subsets) {
             var curr = regimens[regindex];
@@ -225,13 +234,22 @@
             var diffmnd = Math.max(0,goal[1]-with_regi[1]);
             var difftac = Math.max(0,goal[2]-with_regi[2]);
             sumdiff = 1*diffstr + diffmnd + difftac;
-            console.log(sumdiff);
+            if (sumdiff < min_diff) {
+              min_diff = sumdiff;
+              min_turn = turn;
+              min_set = subset;
+              min_regi = regi;
+              min_total = with_regi;
+              min_str = diffstr;
+              min_mnd = diffmnd;
+              min_tac = difftac;
+            }
           }
         }
 
         $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
-        $('#div-wrapper').append(" ");
-        $('#div-wrapper').append(get_regimens([[0,regimen]],{})+ "</div>");
+        $('#div-wrapper').append(" Use " + min_set + " with regimen " + min_regi);
+        $('#div-wrapper').append("</div>");
 
       }
       $(document).ready(function() {
