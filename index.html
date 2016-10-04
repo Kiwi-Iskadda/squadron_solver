@@ -149,7 +149,7 @@
       }
 
       function get_regimens(queue,regidict) {
-        if (len(queue) == 0) {
+        if (queue.length == 0) {
           return Object.keys(regidict).map(function(key){return regidict[key];});
         }
         var [turn,regimen] = queue.pop(0);
