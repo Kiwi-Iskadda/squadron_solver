@@ -206,7 +206,8 @@
         subsets = combine(tuples,4);
         $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
         $('#div-wrapper').append(" ");
-        $('#div-wrapper').append(get_regimens([regimen],{}).length + "</div>")
+        $('#div-wrapper').append(regimen + "</div>");
+        //$('#div-wrapper').append(get_regimens([regimen],{}).length + "</div>")
 
       }
       $(document).ready(function() {
