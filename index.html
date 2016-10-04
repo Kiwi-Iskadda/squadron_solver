@@ -153,7 +153,7 @@
           return Object.keys(regidict).map(function(key){return regidict[key];});
         }
         var [turn,regimen] = queue.pop(0);
-        if (regimen[0]<0 or regimen[1]<0 or regimen[2]<0) {
+        if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
           return get_regimens(queue,regidict);
         }
         if (regimen in regidict) {
