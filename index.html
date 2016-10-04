@@ -169,6 +169,15 @@
         return Object.keys(regidict).map(function(key){return regidict[key];});
       }
 
+      function sum(arr) {
+        arr.reduce(function (r, a) {
+          a.forEach(function (b, i) {
+            r[i] = (r[i] || 0) + 1*b;
+          });
+          return r;
+        }, []);
+      }
+
       function solve(e) {
         e.preventDefault();
         str1 = $('form input[name="str1"]').val();
@@ -199,6 +208,21 @@
         goal = [$('form input[name="goalstr"]').val(),$('form input[name="goalmnd"]').val(),$('form input[name="goaltac"]').val()]
         regimen = [$('form input[name="regstr"]').val(),$('form input[name="regmnd"]').val(),$('form input[name="regtac"]').val()]
         subsets = combine(tuples,4);
+
+        var regimens = get_regimens([[0,regimen]],{});
+
+        for ([turn,regimen] in regimens) {
+          for (subset in subsets) {
+            var without_regi = sum(subset);
+            var with_regi = sum([without_regi,regimen]);
+            var diffstr = max(0,goal[0]-with_regi[0]);
+            var diffmnd = max(0,goal[1]-with_regi[1]);
+            var difftac = max(0,goal[2]-with_regi[2]);
+            sumdiff = 1*diffstr + diffmnd + difftac;
+            console.log(sumdiff);
+          }
+        }
+
         $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
         $('#div-wrapper').append(" ");
         $('#div-wrapper').append(get_regimens([[0,regimen]],{})+ "</div>")
