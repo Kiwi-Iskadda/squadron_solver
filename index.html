@@ -150,6 +150,7 @@
 
       function get_regimens(queue,regidict) {
         while (queue.length > 0) {
+          console.log(queue.length);
           var [turn,regimen] = queue.shift();
           if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
            continue;
