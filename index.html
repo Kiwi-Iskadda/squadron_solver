@@ -150,7 +150,9 @@
 
       function get_regimens(queue,regidict) {
         while (queue.length > 0) {
-          var [turn,regi] = queue.shift();
+          var curr = queue.shift();
+          var turn = curr[0];
+          var regi = curr[1];
           if (regi[0]<0 || regi[1]<0 || regi[2]<0) {
             continue;
           }
@@ -214,7 +216,9 @@
         for (regindex in regimens) {
           for (index in subsets) {
             //minor change
-            var [turn,regi] = regimens[regindex]
+            var curr = regimens[regindex];
+            var turn = curr[0];
+            var regi = curr[1];
             var subset = subsets[index];
             var without_regi = sum(subset);
             var with_regi = sum(new Array([without_regi,regi]));
