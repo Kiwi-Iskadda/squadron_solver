@@ -151,16 +151,16 @@
       function get_regimens(queue,regidict) {
         var iters = 0;
         while (queue.length > 0 || iters < 4) {
-          console.log(queue.length);
-          console.log(queue);
           var [turn,regimen] = queue.shift();
           if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
+            console.log("that happened");
            continue;
           }
           if (regimen in regidict) {
+            console.log("this happened");
             continue;
           }
-          regidict[regimen] = (turn,regimen);
+          regidict[regimen] = [turn,regimen];
           turn = turn + 1;
           queue.push([turn,[regimen[0]+40,regimen[1]-20,regimen[2]-20]]);
           queue.push([turn,[regimen[0]-20,regimen[1]+40,regimen[2]-20]]);
