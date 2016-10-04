@@ -149,16 +149,12 @@
       }
 
       function get_regimens(queue,regidict) {
-        var iters = 0;
         while (queue.length > 0) {
           var [turn,regimen] = queue.shift;
-          window.alert(regimen);
           if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
-            console.log("that happened");
             continue;
           }
           if (regimen in regidict) {
-            console.log("this happened");
             continue;
           }
           regidict[regimen] = [turn,regimen];
