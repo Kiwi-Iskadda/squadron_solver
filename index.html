@@ -248,7 +248,8 @@
         }
 
         $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
-        $('#div-wrapper').append(" Use " + min_set + " with regimen " + min_regi);
+        $('#div-wrapper').append("\n Use squadron members ((" + min_set[0] + "),(" + min_set[1] + "),(" + min_set[2] + "),(" + min_set[3] + ")) with regimen " + min_regi);
+        $('#div-wrapper').append("\n It will take " + min_turn + "trainings to get to this.")
         $('#div-wrapper').append("</div>");
 
       }
