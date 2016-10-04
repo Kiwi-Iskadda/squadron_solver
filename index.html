@@ -248,8 +248,14 @@
         }
 
         $('#div-wrapper').replaceWith('<div id="div-wrapper">');
-        $('#div-wrapper').append("<br /> Use squadron members ((" + min_set[0] + "),(" + min_set[1] + "),(" + min_set[2] + "),(" + min_set[3] + ")) with regimen " + min_regi + ".");
-        $('#div-wrapper').append("<br /> It will take " + min_turn + " trainings to get to this.")
+        if (min_diff == 0) {
+          $('#div-wrapper').append("SUCCESS! You have the stats to do this mission, but you might have to do some regimen training!");
+        } else {
+          $('#div-wrapper').append("FAILURE! There is no way to complete this mission with your stats. I recommend levelling up.");
+          $('#div-wrapper').append("<br /> However, the closest you can get is missing " + min_str + " strength, " + min_mnd + " mind, and " + min_tac "tactics.");
+        }
+        $('#div-wrapper').append("<br /> Use squadron members ((" + min_set[0] + "),(" + min_set[1] + "),(" + min_set[2] + "),(" + min_set[3] + ")) with regimen (" + min_regi + ").");
+        $('#div-wrapper').append("<br /> It will take " + min_turn + " trainings to get to this.");
         $('#div-wrapper').append("</div>");
 
       }
