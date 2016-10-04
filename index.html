@@ -152,7 +152,7 @@
         if (queue.length == 0) {
           return Object.keys(regidict).map(function(key){return regidict[key];});
         }
-        var [turn,regimen] = queue.pop(0);
+        var [turn,regimen] = queue.shift();
         if (regimen[0]<0 || regimen[1]<0 || regimen[2]<0) {
           return get_regimens(queue,regidict);
         }
@@ -161,12 +161,12 @@
         }
         regidict[regimen] = (turn,regimen);
         turn = turn + 1;
-        queue.append((turn,[regimen[0]+40,regimen[1]-20,regimen[2]-20]));
-        queue.append((turn,[regimen[0]-20,regimen[1]+40,regimen[2]-20]));
-        queue.append((turn,[regimen[0]-20,regimen[1]-20,regimen[2]+40]));
-        queue.append((turn,[regimen[0]-40,regimen[1]+20,regimen[2]+20]));
-        queue.append((turn,[regimen[0]+20,regimen[1]-40,regimen[2]+20]));
-        queue.append((turn,[regimen[0]+20,regimen[1]+20,regimen[2]-40]));
+        queue.push([turn,[regimen[0]+40,regimen[1]-20,regimen[2]-20]]);
+        queue.push([turn,[regimen[0]-20,regimen[1]+40,regimen[2]-20]]);
+        queue.push([turn,[regimen[0]-20,regimen[1]-20,regimen[2]+40]]);
+        queue.push([turn,[regimen[0]-40,regimen[1]+20,regimen[2]+20]]);
+        queue.push([turn,[regimen[0]+20,regimen[1]-40,regimen[2]+20]]);
+        queue.push([turn,[regimen[0]+20,regimen[1]+20,regimen[2]-40]]);
         return get_regimens(queue,regidict);
       }
 
