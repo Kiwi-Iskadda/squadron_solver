@@ -200,7 +200,7 @@
         goal = [$('form input[name="goalstr"]').val(),$('form input[name="goalmnd"]').val(),$('form input[name="goaltac"]').val()]
         regimen = [$('form input[name="regstr"]').val(),$('form input[name="regmnd"]').val(),$('form input[name="regtac"]').val()]
         subsets = combine(tuples,4);
-        $('#div-wrapper').replaceWith("<div id="div-wrapper">" + subsets.length);
+        $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
         $('#div-wrapper').append(" ");
         $('#div-wrapper').append(get_regimens([regimen],{}).length + "</div>")
 
