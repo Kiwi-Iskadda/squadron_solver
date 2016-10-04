@@ -217,9 +217,7 @@
         var min_turn;
         var min_set;
         var min_regi;
-        var min_str;
-        var min_mnd;
-        var min_tac;
+        var min_total;
 
         for (regindex in regimens) {
           for (index in subsets) {
@@ -239,9 +237,6 @@
               min_set = subset;
               min_regi = regi;
               min_total = with_regi;
-              min_str = diffstr;
-              min_mnd = diffmnd;
-              min_tac = difftac;
             }
           }
         }
@@ -255,7 +250,7 @@
         }
         $('#div-wrapper').append("<br /> Use squadron members ((" + min_set[0] + "),(" + min_set[1] + "),(" + min_set[2] + "),(" + min_set[3] + ")) with regimen (" + min_regi + ").");
         $('#div-wrapper').append("<br /> It will take " + min_turn + " trainings to get to this.");
-        $('#div-wrapper').append("<br /> Your total stats will be (" + min_str + "," + min_mnd + "," + min_tac + ").")
+        $('#div-wrapper').append("<br /> Your total stats will be (" + min_total + ").")
         $('#div-wrapper').append("</div>");
 
       }
