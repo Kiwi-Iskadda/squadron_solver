@@ -152,7 +152,7 @@
         if (len(queue) == 0) {
           return Object.keys(regidict).map(function(key){return regidict[key];});
         }
-        (turn,regimen) = queue.pop(0);
+        var (turn,regimen) = queue.pop(0);
         if (regimen[0]<0 or regimen[1]<0 or regimen[2]<0) {
           return get_regimens(queue,regidict);
         }
