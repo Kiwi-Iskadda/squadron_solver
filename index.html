@@ -221,11 +221,12 @@
             var diffmnd = Math.max(0,goal[1]-with_regi[1]);
             var difftac = Math.max(0,goal[2]-with_regi[2]);
             sumdiff = 1*diffstr + diffmnd + difftac;
+          }
         }
 
         $('#div-wrapper').replaceWith('<div id="div-wrapper">' + subsets.length);
         $('#div-wrapper').append(" ");
-        $('#div-wrapper').append(get_regimens([[0,regimen]],{})+ "</div>")
+        $('#div-wrapper').append(get_regimens([[0,regimen]],{})+ "</div>");
 
       }
       $(document).ready(function() {
